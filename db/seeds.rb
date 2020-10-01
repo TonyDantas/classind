@@ -54,6 +54,10 @@ end
 Game.create!(titulo_no_brasil: "The Last of Us", produtor: "Naughty Dog", ano_de_producao: "2013", genero: "Tiro em Terceira Pessoa", classificacao: "não recomendado para menores de 16 (dezesseis) anos", descritor_de_conteudo: "Drogas Lícitas, Violência Extrema e Linguagem Imprópia", poster: "https://upload.wikimedia.org/wikipedia/pt/b/be/The_Last_of_Us_capa.png")
 Game.create!(titulo_no_brasil: "The Last of Us: Part II", produtor: "Naughty Dog", ano_de_producao: "2020", genero: "Ação e Aventura", classificacao: "não recomendado para menores de 18 (dezoito) anos", descritor_de_conteudo: "Drogas, Violência Extrema e Nudez", poster: "https://upload.wikimedia.org/wikipedia/pt/9/96/The_Last_of_Us_2_capa.png")
 
+Game.create!(titulo_no_brasil: "Minecraft", produtor: "Microsoft Studios", ano_de_producao: "2012", genero: "Aventura", classificacao: "Livre", descritor_de_conteudo: "", poster: "https://upload.wikimedia.org/wikipedia/pt/9/9c/Minecraft_capa.png")
+Game.create!(titulo_no_brasil: "Minecraft: Story Mode", produtor: "Telltale Games", ano_de_producao: "2015", genero: "Ação", classificacao: "não recomendado para menores de 10 (dez) anos", descritor_de_conteudo: "Violência", poster: "https://img.ibxk.com.br/2018/04/30/30134446047188.jpg")
+Game.create!(titulo_no_brasil: "Minecraft: Dungeons", produtor: "Microsoft Studios", ano_de_producao: "2019", genero: "Ação, Aventura e RPG", classificacao: "não recomendado para menores de 10 (dez) anos", descritor_de_conteudo: "Violência", poster: "https://store-images.s-microsoft.com/image/apps.2957.14045794648370014.2229d39b-90c3-496e-8fac-9987450ca4d8.680871e0-da2a-4109-8e2c-4bc75b2d56f8")
+
 
 
 
