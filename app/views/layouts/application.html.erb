@@ -21,10 +21,53 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    
-    <%= yield %>
-    
+    <div class="br-header" compact>
+      <div class="container-lg">
+        <div class="flex-container">
+          <div class="logo">
+            <a href="https://www.gov.br">
+              <img src="https://www.gov.br/++theme++padrao_govbr/img/govbr-colorido-b.png" alt="logo gov.br">
+            </a>
+          </div>
+          <div class="actions">
+            <div class="links">
+              <button class="br-button" type="button" circle mini><i class="fas fa-ellipsis-v"></i>
+              </button>
+              <ul>
+                <li class="title">Acesso Rápido</li>
+                <li><a href="https://www.gov.br/pt-br/orgaos-do-governo">Órgãos do Governo</a></li>
+                <li><a href="https://www.gov.br/acessoainformacao/pt-br">Acesso à Informação</a></li>
+                <li><a href="https://www.justica.gov.br/seus-direitos/classificacao/legislacao">Legislação</a></li>
+                <li><a href="https://www.gov.br/governodigital/pt-br/acessibilidade-digital">Acessibilidade</a></li>
+                <li><a href="#" class="link-contraste">
+                  <span class="fas fa-adjust"></span></li>
+                </a>
+              </ul>
+            </div>
+            <div class="avatar">
+              <div class="br-badge" danger>
+                <div class="icon">4</div>
+                <div class="content">
+                  <div class="br-avatar">
+                    <div class="image"><img src="https://kitt.lewagon.com/placeholder/users/TonyDantas" alt="Avatar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu">
+            <button class="br-button" type="button" circle mini><i class="fas fa-bars"></i>
+            </button>
+            <div class="title">Classificação Indicativa</div>
+            <div class="subtitle">Ministério da Justiça e Segurança Pública</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <%= yield %>
+    </div>
+
     <%= render "shared/footer" %>
     <script src="../js/dsgov.js"></script>
   </body>
