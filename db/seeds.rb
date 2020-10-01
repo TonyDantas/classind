@@ -1,3 +1,7 @@
+require 'json'
+require 'open-uri'
+
+Movie.destroy_all
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -31,9 +35,23 @@ Movie.create!(titulo_no_brasil: "Star Wars: Episódio III - A Vingança dos Sith
 Movie.create!(titulo_no_brasil: "Star Wars: Episódio II - Ataque dos Clones", titulo_original: "Star Wars: Episode II - Attack of the Clones", categoria: "Longa Metragem", ano_de_producao: 2002, classificacao: "Livre", descritor_de_conteudo: "")
 Movie.create!(titulo_no_brasil: "Star Wars: Episódio I - A Ameaça Fantasma", titulo_original: "Star Wars: Episode I - The Phantom Menace", categoria: "Longa Metragem", ano_de_producao: 1999, classificacao: "Livre", descritor_de_conteudo: "")
 
+#Movie.all.each do |movie|
+  #go to API and fetch poster e guardar na variável
+  #movie.poster = variável
+  #movie.save!
 
 
 
+Movie.all.each do |mv|
+  url = "http://www.omdbapi.com/?t=#{mv.titulo_original}&apikey=adf1f2d7"
+  poster_serialized = open(url).read
+  poster = JSON.parse(poster_serialized)
+  mv.poster = poster["Poster"]
+  mv.save!
+end
+
+Game.create!(titulo_no_brasil: "The Last of Us", produtor: "Naughty Dog", ano_de_producao: "2013", genero: "Tiro em Terceira Pessoa", classificacao: "não recomendado para menores de 16 (dezesseis) anos", descritor_de_conteudo: "Drogas Lícitas, Violência Extrema e Linguagem Imprópia", poster: "https://upload.wikimedia.org/wikipedia/pt/b/be/The_Last_of_Us_capa.png")
+Game.create!(titulo_no_brasil: "The Last of Us: Part II", produtor: "Naughty Dog", ano_de_producao: "2020", genero: "Ação e Aventura", classificacao: "não recomendado para menores de 18 (dezoito) anos", descritor_de_conteudo: "Drogas, Violência Extrema e Nudez", poster: "https://cdn.awsli.com.br/600x450/1202/1202562/produto/48919991/1cdabef25a.jpg")
 
 
 
