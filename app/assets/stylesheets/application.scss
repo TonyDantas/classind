@@ -13,3 +13,71 @@
 @import "pages/index";
 
 @import "css/dsgov.min";
+
+// #home_geral {
+//   background-image: asset-url("classind_banner.png");
+//   background-size: cover;
+//   min-height: 100%;
+//   width: 100%;
+//   padding: 228px;
+//   text-shadow: 1px 1px 5px black;
+//   margin-top: 88px;
+// }
+
+.br-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.br-input {
+  position: relative;
+  margin: 10px;
+  width: 75%;
+}
+
+#home_geral {
+  width: 100vw;
+  height: 100vh;
+  background: #6C7A89;
+  background-image: asset-url("classind_banner.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#box {
+  width: 50vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttons_place {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttons_place button{
+  margin: 6px;
+}
+
+body {
+margin: 0px;
+}
+
+.br-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.buttons_place {
+  position: relative;
+}
