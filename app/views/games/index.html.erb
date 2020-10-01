@@ -1,21 +1,24 @@
-<div class="container">
-
+<div class="container" id="movies_index">
   <%= form_tag games_path, method: :get do %>
     <div class="row ml-1">
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control-lg",
+          class: "br-input",
           placeholder: "Encontre um jogo"
         %>
-        <%= submit_tag "Buscar", class: "btn-lg btn-primary" %>
+        <%= submit_tag "Buscar", class: "br-button primary mini" %>
     </div>
   <% end %>
 
   <% @games.each do |game| %>
-    <div>
-      <img src="<%= "#{game.poster}" %>" alt="">
-      <p><%= game.titulo_no_brasil %> (<%= game.ano_de_producao %>)</p>
+    <div class="movie-card">
+      <img id="movie-card-poster" src="<%= "#{game.poster}" %>" alt="<%= game.titulo_no_brasil %> poster">
+      <div id="movie-card-text">
+        <h3 id="movie-card-title"><%= game.titulo_no_brasil %></h3>
+        <h5>(<%= game.ano_de_producao %>)</h5>
+        <p><%= game.genero %></p>
+        <button class="br-button primary mini"> Detalhar </button>
+      </div>
     </div>
   <% end %>
-
 </div>
