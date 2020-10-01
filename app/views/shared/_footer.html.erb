@@ -2,28 +2,45 @@
   <div class="br-footer">
     <div class="container-lg">
       <div class="d-none d-sm-block">
-        <div class="row align-items-end justify-content-between py-5">
+        <div class="row align-items-end justify-content-between container-footer">
           <div class="col social-network">
             <p class="text-up-01 text-extra-bold text-uppercase">Redes Sociais</p>
-            <button class="br-button mr-3" type="button" circle><img src="https://cdn.dsgovserprodesign.estaleiro.serpro.gov.br/design-system/images/button-negative.png" alt="Imagem">
-            </button>
-            <button class="br-button mr-3" type="button" circle><img src="https://cdn.dsgovserprodesign.estaleiro.serpro.gov.br/design-system/images/button-negative.png" alt="Imagem">
-            </button>
-            <button class="br-button mr-3" type="button" circle><img src="https://cdn.dsgovserprodesign.estaleiro.serpro.gov.br/design-system/images/button-negative.png" alt="Imagem">
-            </button>
-            <button class="br-button mr-3" type="button" circle><img src="https://cdn.dsgovserprodesign.estaleiro.serpro.gov.br/design-system/images/button-negative.png" alt="Imagem">
-            </button>
+
+            <%= link_to "https://www.twitter.com/JusticaGovBR", target: "blank" do %>
+              <i class="mr-3 fab fa-twitter" ></i>
+            <% end %>
+
+            <%= link_to "https://www.youtube.com/justicagovbr", alt: "linkedin", target: "blank" do %>
+              <i class="mr-3 fab fa-youtube" ></i>
+            <% end %>
+
+            <%= link_to "https://www.facebook.com/JusticaGovBR", target: "blank" do %>
+              <i class="mr-3 fab fa-facebook" ></i>
+            <% end %>
+
+            <%= link_to "https://www.flickr.com/JusticaGovBR", target: "blank" do %>
+              <i class="mr-3 fab fa-flickr" ></i>
+            <% end %>
+
+            <%= link_to "https://www.instagram.com/mjsp_gov", target: "blank" do %>
+              <i class="mr-3 fab fa-instagram" ></i>
+            <% end %>
+
+
           </div>
-          <div class="col assigns text-right"><img class="ml-4" src="https://cdn.dsgovserprodesign.estaleiro.serpro.gov.br/design-system/images/logo-assign-negative.png" alt="Imagem"><img class="ml-4" src="https://cdn.dsgovserprodesign.estaleiro.serpro.gov.br/design-system/images/logo-assign-negative.png" alt="Imagem">
+          <div class="col assigns text-right">
+            <a class="logo-acesso-footer ml-4" href="http://www.acessoainformacao.gov.br/" target="blank">
+              <img src="<%= image_path("acesso.svg") %>" alt="Acesso Informação">
+            </a>
+            <a class="logo-gov ml-4" href="http://www.brasil.gov.br/" target="blank">
+              <img class="ml-4" src="<%= image_path("govbr.svg") %>" alt="Governo Federal">
+            </a>
           </div>
         </div>
       </div>
     </div>
-    <div class="br-divider"></div>
-    <div class="container-lg">
-      <div class="info">
-        <div class="text-down-01 text-medium pb-3 text-center">Texto destinado a exibição de informações relacionadas à <strong>licença de uso.</strong></div>
-      </div>
-    </div>
+    
   </div>
 </div>
+
+            
