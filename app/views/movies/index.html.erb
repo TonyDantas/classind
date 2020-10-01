@@ -1,14 +1,21 @@
-<%= form_tag movies_path, method: :get do %>
-  <div class="row ml-1">
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control-lg",
-        placeholder: "Encontre um filme"
-      %>
-      <%= submit_tag "Buscar", class: "btn-lg btn-primary" %>
-  </div>
-<% end %>
+<div class="container">
 
-<% @movies.each do |movie| %>
-  <p><%= movie.titulo_no_brasil %></p>
-<% end %>
+  <%= form_tag movies_path, method: :get do %>
+    <div class="row ml-1">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control-lg",
+          placeholder: "Encontre um filme"
+        %>
+        <%= submit_tag "Buscar", class: "btn-lg btn-primary" %>
+    </div>
+  <% end %>
+
+  <% @movies.each do |movie| %>
+    <div>
+      <img src="<%= "#{movie.poster}" %>" alt="">
+      <p><%= movie.titulo_no_brasil %> (<%= movie.ano_de_producao %>)</p>
+    </div>
+  <% end %>
+
+</div>
