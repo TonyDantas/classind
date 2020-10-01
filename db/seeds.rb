@@ -2,6 +2,7 @@ require 'json'
 require 'open-uri'
 
 Movie.destroy_all
+Game.destroy_all
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -51,7 +52,7 @@ Movie.all.each do |mv|
 end
 
 Game.create!(titulo_no_brasil: "The Last of Us", produtor: "Naughty Dog", ano_de_producao: "2013", genero: "Tiro em Terceira Pessoa", classificacao: "não recomendado para menores de 16 (dezesseis) anos", descritor_de_conteudo: "Drogas Lícitas, Violência Extrema e Linguagem Imprópia", poster: "https://upload.wikimedia.org/wikipedia/pt/b/be/The_Last_of_Us_capa.png")
-Game.create!(titulo_no_brasil: "The Last of Us: Part II", produtor: "Naughty Dog", ano_de_producao: "2020", genero: "Ação e Aventura", classificacao: "não recomendado para menores de 18 (dezoito) anos", descritor_de_conteudo: "Drogas, Violência Extrema e Nudez", poster: "https://cdn.awsli.com.br/600x450/1202/1202562/produto/48919991/1cdabef25a.jpg")
+Game.create!(titulo_no_brasil: "The Last of Us: Part II", produtor: "Naughty Dog", ano_de_producao: "2020", genero: "Ação e Aventura", classificacao: "não recomendado para menores de 18 (dezoito) anos", descritor_de_conteudo: "Drogas, Violência Extrema e Nudez", poster: "https://upload.wikimedia.org/wikipedia/pt/9/96/The_Last_of_Us_2_capa.png")
 
 
 

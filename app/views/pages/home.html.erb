@@ -1,17 +1,18 @@
 <div class="container-fluid" id="home_geral">
-  <div id="box">
-    <div class="br-input">
-      <label for="input"></label>
-      <input id="input" type="text" placeholder="Pesquisar por título da obra" />
-      <div class="container-fluid" id="buttons_place">
-        <label for="input"></label>
-        <button class="br-button primary" type="button" primary>
-            Audiovisual
-        </button>
-        <button class="br-button primary" type="button" primary>
-            Jogos
-        </button>
+  <div class="br-input" id="box">
+    <%= form_tag movies_path, method: :get do %>
+      <div class="row ml-1">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control-lg",
+            placeholder: "Pesquisar por título da obra"
+          %>
+          <div class="container-fluid" id="buttons_place">
+            <%= submit_tag "Audiovisual", class: "br-button primary" %>
+            <%= submit_tag "Jogos", class: "br-button primary" %>
+          </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
+
