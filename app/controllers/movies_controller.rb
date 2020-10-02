@@ -6,9 +6,10 @@ class MoviesController < ApplicationController
       if params[:query] && Movie.search_by_titulo_no_brasil(params[:query]).present?
         @movies = Movie.search_by_titulo_no_brasil(params[:query])
       else
-        flash[:notice] = "Título não localizado"
+
         @movies = []
-        # redirect_to root_path
+        flash[:notice] = "Título não localizado"
+        redirect_to root_path
       end
     when "Jogos"
       session[:params] = params[:query]
