@@ -48,14 +48,94 @@
   margin-bottom: 40px;
 }
 
+#caixa-conteudo {
+  background: black;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0;
+  height: 110px;
+  width: 230px;
+}
+
+#caixa-conteudo h6 {
+  margin: 5px;
+  font-size: x-small;
+}
+
+#caixa-descritor {
+  background: white;
+  color: black;
+  border-radius: 5px;
+  height: 64px;
+  margin-top: 5px;
+  display: flex;
+}
+
+#caixa-descritor img {
+  height: 60px;
+  width: 60px;
+  margin: 2px;
+}
+
+#descritor-text {
+  margin-left: 3px;
+  text-align: center;
+  width: 100%;
+}
+
+#descritor-text p {
+  margin-left: 3px;
+  text-align: center;
+}
+
+.movie-card-show {
+  display: flex;
+  width: 100%;
+  height: 1000px;
+  margin: 10px;
+  box-shadow: 0px 5px 8px -3px;
+}
+
+#movie-card-details {
+  display: flex;
+}
+
+#movie-card-show-poster {
+  height: 245px;
+  width: 200px;
+}
+
+#movie-card-show-text {
+  margin-left: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#movie-card-show-text h2 {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+#movie-card-show-text h4 {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+#movie-card-show-text p {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
 #movies_index {
   margin-top: 120px;
   margin-bottom: 150px;
 }
 
 .br-footer {
-  position: fixed;
-  bottom: 0;
+  position: absolute;
+  // bottom: 0;
   left: 0;
   width: 100%;
 }
