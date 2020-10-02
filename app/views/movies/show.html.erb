@@ -1,12 +1,20 @@
-<div class="container">
-  <div class="movie-card">
-    <img id="movie-card-poster" src="<%= "#{@movie.poster}" %>" alt="<%= @movie.titulo_no_brasil %> poster">
-    <div id="movie-card-text">
-      <h3 id="movie-card-title"><%= @movie.titulo_no_brasil %></h3>
-      <h5>(<%= @movie.ano_de_producao %>)</h5>
+<div class="container" id="movies_index">
+  <div class="movie-card-show">
+    <img id="movie-card-show-poster" src="<%= "#{@movie.poster}" %>" alt="<%= @movie.titulo_no_brasil %> poster">
+    <div id="movie-card-show-text">
+      <h2><%= @movie.titulo_no_brasil %></h2>
+      <h4>(<%= @movie.ano_de_producao %>)</h4>
       <p><%= @movie.categoria %></p>
+      <div class="card" id="caixa-conteudo">
+        <h6>CLASSIFICAÇÃO INDICATIVA: 16 ANOS</h6>
+        <div id="caixa-descritor">
+          <%= image_tag "16.jpg" %>
+          <div id="descritor-text">
+            <p><%= @movie.descritor_de_conteudo %></p>
+          </div>
+        </div>
+      </div>
+      <h5>Classificação Indicativa:</h5><p><%= @movie.classificacao %></p>
     </div>
   </div>
-  <br>
-  <%= link_to 'Voltar', root_path, class: "btn btn-primary" %>
 </div>
