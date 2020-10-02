@@ -59,9 +59,8 @@
       <h5>Classificação Indicativa:</h5>
       <p>Para a faixa etária de <%= @movie.classificacao %>, o(s) descritor(es) de conteúdo de <%= @movie.descritor_de_conteudo %> significa(m) que... </p>
       <h5>Sinopse:</h5>
-      <p></p>
+      <p><%= @movie.sinopse %></p>
     </div>
-  <h5>Sinopse:</h5><p><%= @movie.sinopse %></p>
   </div>
   <div id="back-button">
     <%= link_to "Voltar", :back, class: "br-button primary mini" %>
