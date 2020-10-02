@@ -39,3 +39,9 @@
     opacity: 1;
   }
 }
+
+.title {
+  &:hover {
+    text-decoration: none;
+  }
+}
