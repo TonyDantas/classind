@@ -1,6 +1,9 @@
 <div class="container-fluid" id="home_geral">
   <div class="br-input" id="box">
-
+    <h2>Classificação Indicativa</h2>
+    <p>
+      Descubra a recomendação etária de filmes, séries, programas de TV ou jogos.
+    </p>
     <% if flash[:notice] %>
       <div class="notice"><%= flash[:notice] %></div>
     <% end %>
@@ -9,12 +12,12 @@
       <div class="row ml-1">
           <%= text_field_tag :query,
             params[:query],
-            class: "form-control-lg",
+            class: "br-form",
             placeholder: "Pesquisar por título da obra"
           %>
           <div class="container-fluid" id="buttons_place">
-            <%= submit_tag "Audiovisual", class: "br-button primary" %>
-            <%= submit_tag "Jogos", class: "br-button primary" %>
+            <%= submit_tag "Audiovisual", class: "br-button primary mini" %>
+            <%= submit_tag "Jogos", class: "br-button primary mini" %>
           </div>
       </div>
     <% end %>
