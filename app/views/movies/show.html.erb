@@ -9,7 +9,7 @@
         <% if @movie.classificacao.include? "Livre" %>
           <h6><%= "CLASSIFICAÇÃO INDICATIVA: Livre" %></h6>
           <div id="caixa-descritor">
-            <%= image_tag "16.jpg" %>
+            <%= image_tag "L.jpg" %>
             <div id="descritor-text">
               <p><%= @movie.descritor_de_conteudo %></p>
             </div>
@@ -17,7 +17,7 @@
         <% elsif @movie.classificacao.include? "10" %>
           <h6><%= "CLASSIFICAÇÃO INDICATIVA: 10 ANOS" %></h6>
           <div id="caixa-descritor">
-            <%= image_tag "16.jpg" %>
+            <%= image_tag "10.jpg" %>
             <div id="descritor-text">
               <p><%= @movie.descritor_de_conteudo %></p>
             </div>
@@ -25,7 +25,7 @@
         <% elsif @movie.classificacao.include? "12" %>
           <h6><%= "CLASSIFICAÇÃO INDICATIVA: 12 ANOS" %></h6>
           <div id="caixa-descritor">
-            <%= image_tag "16.jpg" %>
+            <%= image_tag "12.jpg" %>
             <div id="descritor-text">
               <p><%= @movie.descritor_de_conteudo %></p>
             </div>
@@ -33,7 +33,7 @@
         <% elsif @movie.classificacao.include? "14" %>
           <h6><%= "CLASSIFICAÇÃO INDICATIVA: 14 ANOS" %></h6>
           <div id="caixa-descritor">
-            <%= image_tag "16.jpg" %>
+            <%= image_tag "14.jpg" %>
             <div id="descritor-text">
               <p><%= @movie.descritor_de_conteudo %></p>
             </div>
@@ -49,15 +49,20 @@
         <% elsif @movie.classificacao.include? "18" %>
           <h6><%= "CLASSIFICAÇÃO INDICATIVA: 18 ANOS" %></h6>
           <div id="caixa-descritor">
-            <%= image_tag "16.jpg" %>
+            <%= image_tag "18.jpg" %>
             <div id="descritor-text">
               <p><%= @movie.descritor_de_conteudo %></p>
             </div>
           </div>
         <% end %>
       </div>
-      <h5>Classificação Indicativa:</h5><p><%= @movie.classificacao %></p>
+      <h5>Classificação Indicativa:</h5>
+      <p>Para a faixa etária de <%= @movie.classificacao %>, o(s) descritor(es) de conteúdo de <%= @movie.descritor_de_conteudo %> significa(m) que... </p>
+      <h5>Sinopse:</h5>
+      <p></p>
     </div>
   </div>
-  <%= link_to "Voltar", root_path, class: "br-button primary mini" %>
+  <div id="back-button">
+    <%= link_to "Voltar", root_path, class: "br-button primary mini" %>
+  </div>
 </div>
