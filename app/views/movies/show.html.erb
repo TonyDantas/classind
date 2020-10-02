@@ -6,15 +6,58 @@
       <h4>(<%= @movie.ano_de_producao %>)</h4>
       <p><%= @movie.categoria %></p>
       <div class="card" id="caixa-conteudo">
-        <h6>CLASSIFICAÇÃO INDICATIVA: 16 ANOS</h6>
-        <div id="caixa-descritor">
-          <%= image_tag "16.jpg" %>
-          <div id="descritor-text">
-            <p><%= @movie.descritor_de_conteudo %></p>
+        <% if @movie.classificacao.include? "Livre" %>
+          <h6><%= "CLASSIFICAÇÃO INDICATIVA: Livre" %></h6>
+          <div id="caixa-descritor">
+            <%= image_tag "16.jpg" %>
+            <div id="descritor-text">
+              <p><%= @movie.descritor_de_conteudo %></p>
+            </div>
           </div>
-        </div>
+        <% elsif @movie.classificacao.include? "10" %>
+          <h6><%= "CLASSIFICAÇÃO INDICATIVA: 10 ANOS" %></h6>
+          <div id="caixa-descritor">
+            <%= image_tag "16.jpg" %>
+            <div id="descritor-text">
+              <p><%= @movie.descritor_de_conteudo %></p>
+            </div>
+          </div>
+        <% elsif @movie.classificacao.include? "12" %>
+          <h6><%= "CLASSIFICAÇÃO INDICATIVA: 12 ANOS" %></h6>
+          <div id="caixa-descritor">
+            <%= image_tag "16.jpg" %>
+            <div id="descritor-text">
+              <p><%= @movie.descritor_de_conteudo %></p>
+            </div>
+          </div>
+        <% elsif @movie.classificacao.include? "14" %>
+          <h6><%= "CLASSIFICAÇÃO INDICATIVA: 14 ANOS" %></h6>
+          <div id="caixa-descritor">
+            <%= image_tag "16.jpg" %>
+            <div id="descritor-text">
+              <p><%= @movie.descritor_de_conteudo %></p>
+            </div>
+          </div>
+        <% elsif @movie.classificacao.include? "16" %>
+          <h6><%= "CLASSIFICAÇÃO INDICATIVA: 16 ANOS" %></h6>
+          <div id="caixa-descritor">
+            <%= image_tag "16.jpg" %>
+            <div id="descritor-text">
+              <p><%= @movie.descritor_de_conteudo %></p>
+            </div>
+          </div>
+        <% elsif @movie.classificacao.include? "18" %>
+          <h6><%= "CLASSIFICAÇÃO INDICATIVA: 18 ANOS" %></h6>
+          <div id="caixa-descritor">
+            <%= image_tag "16.jpg" %>
+            <div id="descritor-text">
+              <p><%= @movie.descritor_de_conteudo %></p>
+            </div>
+          </div>
+        <% end %>
       </div>
       <h5>Classificação Indicativa:</h5><p><%= @movie.classificacao %></p>
     </div>
   </div>
+  <%= link_to "Voltar", root_path, class: "br-button primary mini" %>
 </div>
