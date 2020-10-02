@@ -51,6 +51,14 @@ Movie.all.each do |mv|
   mv.save!
 end
 
+Movie.all.each do |mv|
+  url = "http://www.omdbapi.com/?t=#{mv.titulo_original}&apikey=adf1f2d7"
+  sinopse_serialized = open(url).read
+  sinopse = JSON.parse(sinopse_serialized)
+  mv.sinopse = sinopse["Plot"]
+  mv.save!
+end
+
 Game.create!(titulo_no_brasil: "The Last of Us", produtor: "Naughty Dog", ano_de_producao: "2013", genero: "Tiro em Terceira Pessoa", classificacao: "não recomendado para menores de 16 (dezesseis) anos", descritor_de_conteudo: "Drogas Lícitas, Violência Extrema e Linguagem Imprópia", poster: "https://upload.wikimedia.org/wikipedia/pt/b/be/The_Last_of_Us_capa.png")
 Game.create!(titulo_no_brasil: "The Last of Us: Part II", produtor: "Naughty Dog", ano_de_producao: "2020", genero: "Ação e Aventura", classificacao: "não recomendado para menores de 18 (dezoito) anos", descritor_de_conteudo: "Drogas, Violência Extrema e Nudez", poster: "https://upload.wikimedia.org/wikipedia/pt/9/96/The_Last_of_Us_2_capa.png")
 

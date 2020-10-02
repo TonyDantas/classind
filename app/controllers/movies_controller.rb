@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
-    case params[:commit] 
+    case params[:commit]
     when "Audiovisual", "Buscar"
       if params[:query] && Movie.search_by_titulo_no_brasil(params[:query]).present?
         @movies = Movie.search_by_titulo_no_brasil(params[:query])
@@ -12,7 +12,7 @@ class MoviesController < ApplicationController
       end
     when "Jogos"
       session[:params] = params[:query]
-      redirect_to games_path  
+      redirect_to games_path
     end
   end
 
