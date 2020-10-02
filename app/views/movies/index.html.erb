@@ -17,7 +17,7 @@
         <h3 id="movie-card-title"><%= movie.titulo_no_brasil %></h3>
         <h5>(<%= movie.ano_de_producao %>)</h5>
         <p><%= movie.categoria %></p>
-        <button class="br-button primary mini"> Detalhar </button>
+        <%= link_to "Detalhar", movie_path(movie), class: "br-button primary mini" %>
       </div>
     </div>
   <% end %>
