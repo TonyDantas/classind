@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="movie-card">
+    <img id="movie-card-poster" src="<%= "#{@game.poster}" %>" alt="<%= @game.titulo_no_brasil %> poster">
+    <div id="movie-card-text">
+      <h3 id="movie-card-title"><%= @game.titulo_no_brasil %></h3>
+      <h5>(<%= @game.ano_de_producao %>)</h5>
+      <p><%= @game.genero %></p>
+    </div>
+  </div>
+  <br>
+  <%= link_to 'Voltar', root_path, class: "btn btn-primary" %>
+</div>
