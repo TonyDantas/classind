@@ -11,7 +11,9 @@
     </div>
 
 
-  <% x = @movies.sort_by { |movie| movie.ano_de_producao } %> 
+
+
+  <% x = @movies.sort_by { |movie| movie.ano_de_producao } %>
   <% x.reverse.each do |movie| %>
     <div class="movie-card">
       <img id="movie-card-poster" src="<%= "#{movie.poster}" %>" alt="<%= movie.titulo_no_brasil %> poster">

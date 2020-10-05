@@ -58,8 +58,10 @@
       </div>
       <h5>Classificação Indicativa:</h5>
       <p>Para a faixa etária de <%= @movie.classificacao %>, o(s) descritor(es) de conteúdo de <%= @movie.descritor_de_conteudo %> significa(m) que... </p>
-      <h5>Sinopse:</h5>
-      <p><%= @movie.sinopse %></p>
+      <% if @movie.categoria.include?("Longa Metrage") %>
+        <h5>Sinopse:</h5>
+        <p><%= @movie.sinopse %></p>
+      <% end %>
     </div>
   </div>
   <div id="back-button">
