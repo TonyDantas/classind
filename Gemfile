@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'bootstrap'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -33,6 +35,9 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'pg_search'
 gem 'cloudinary', '~> 1.16.0'
+
+#plugin that converts checkboxes into toggles
+gem 'bootstrap-toggle-rails'
 
 group :development, :test do
   gem 'pry-byebug'
