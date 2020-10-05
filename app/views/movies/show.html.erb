@@ -2,9 +2,13 @@
   <div class="movie-card-show">
     <img id="movie-card-show-poster" src="<%= "#{@movie.poster}" %>" alt="<%= @movie.titulo_no_brasil %> poster">
     <div id="movie-card-show-text">
-      <h2><%= @movie.titulo_no_brasil %></h2>
-      <h4>(<%= @movie.ano_de_producao %>)</h4>
-      <p><%= @movie.categoria %></p>
+      <div id="movie-card-show-text-title">
+        <h2><%= @movie.titulo_no_brasil %></h2>
+        <h4>(<%= @movie.ano_de_producao %>)</h4>
+        <p><%= @movie.categoria %></p>
+        <h4>Sinopse:</h4>
+        <p><%= @movie.sinopse %></p>
+      </div>
       <div class="card" id="caixa-conteudo">
         <% if @movie.classificacao.include? "Livre" %>
           <h6><%= "CLASSIFICAÇÃO INDICATIVA: Livre" %></h6>
@@ -56,12 +60,98 @@
           </div>
         <% end %>
       </div>
-      <h5>Classificação Indicativa:</h5>
-      <p>Para a faixa etária de <%= @movie.classificacao %>, o(s) descritor(es) de conteúdo de <%= @movie.descritor_de_conteudo %> significa(m) que... </p>
-      <% if @movie.categoria.include?("Longa Metrage") %>
-        <h5>Sinopse:</h5>
-        <p><%= @movie.sinopse %></p>
-      <% end %>
+      <div class="card-show-text-classificacao">
+        <h4 id="classif-title">Classificação Indicativa:</h4>
+        <p>Quais tipos de conteúdo esperar na faixa etária de <strong><%= @movie.classificacao %></strong>?</p>
+        <% if @movie.classificacao.include? "Livre" %>
+          <div>
+            <h6>Violência:</h6>
+            <p>Para essa faixa etária, são esperados níveis muito elementares de violência, com atos de baixa agressividade e cujas consequências pouco tenham relação com efeitos do mundo real. São exemplos comuns dessa categoria agressões presenciadas em desenhos animados, destinados ao público infantil, e tramas infanto-juvenis com embates maniqueístas e de cunho fantasioso. </p>
+          </div>
+          <div>
+            <h6>Sexo e nudez:</h6>
+            <p>Em relação a esse eixo, nem sempre a ocorrência de cenas que abordem tal temática são prejudiciais ao desenvolvimento psicológico da criança. Contudo, são adimitidos para essa faixa etária apenas conteúdos que exibam uma eventual nudez não erótica e não explícita, como um documentário que é apresenta a realidade de índios silvícolas, em suas tribos. </p>
+          </div>
+          <div>
+            <h6>Drogas:</h6>
+            <p>No que concerne ao consumo de drogas, a faixa Livre admite apenas que sejam exibidas cenas em que o uso de drogas lícitas ocorre de forma insinuada, moderada ou bastante atenuada pelos contextos empregados. São exemplos cenas em que uma família brinda com taças de champanhe durante uma ceia de Natal, mas na qual os personagens não são vistos ingerindo tais bebidas. </p>
+          </div>
+
+        <% elsif @movie.classificacao.include? "10" %>
+          <div>
+            <h6>Violência:</h6>
+            <p>Para essa faixa etária, admite-se um nível um pouco menos elementar de violência, podendo ser exposta a criança a atos mais complexos, como a criminalidade de menor potencial ofensivo (furtos, batedores de carteira, violação de cofres) e  sentimentos como ansiedade, angústia e medo.</p>
+          </div>
+          <div>
+            <h6>Sexo e nudez:</h6>
+            <p>Para permanescer nessa recomendação etária, aceitam-se conteúdos de sexo e nudez apenas quando relacionados a um contexto pedagógico, como diálogos e imagens não estimulantes sobre sexo que sejam educativos ou informativos. Exemplo disso são cenas de uma sala de aula em que os alunos aprendem sobre o sistema reprodutor humano.  </p>
+          </div>
+          <div>
+            <h6>Drogas:</h6>
+            <p>A temática de drogas pode ser um pouco mais abordada nessa faixa etária, quando são permitidas cenas em que descreve-se e comenta-se mais detidamente o consumo de drogas lícitas, como o cigarro e o álcool. Além disso, a breve exposição do uso medicinal de drogas lícitas e o discurso ponderado sobre a questão das drogas ilícitas, de forma não apologética, também são permitidos. </p>
+          </div>
+
+        <% elsif @movie.classificacao.include? "12" %>
+          <div>
+            <h6>Violência:</h6>
+            <p>Para essa faixa de recomendação, admite-se uma gama maior de conteúdos de violência e cujos impactos gráficos são um pouco mais pesados. O embate entre personagens, com agressões físicas ou verbais mais detalhadas, já passa a ser aceito, quando seus efeitos passam a ser mais fiéis às consequências do mundo real, como lesões corporais e a exposição de sangue. Além disso, temáticas mais sensíveis como o bullying e a violência psicológica podem ser abordados a partir dessa faixa etária.</p>
+          </div>
+          <div>
+            <h6>Sexo e nudez:</h6>
+            <p>O ato sexual em si e a nudez dos personagens passam ser aceitos nessa faixa etária, porém apenas insinuados ou velados pelos elementos de composição da cena. São aceitos também diálogos com linguagem imprópria, chula ou de conteúdo sexual.</p>
+          </div>
+          <div>
+            <h6>Drogas:</h6>
+            <p>Em relação a esse eixo temático, a exposição ao consumo de drogas lícitas pode ser veiculado, além de serem permitidas cenas em que a temática das drogas ilícitas é abordada, mas desde que o uso de entorpecentes em si não seja exposto.</p>
+          </div>
+
+        <% elsif @movie.classificacao.include? "14" %>
+          <div>
+            <h6>Violência:</h6>
+            <p>Passam a ser permitidos nessa faixa de recomendação etária temáticas mais complexas relacionadas à violência, como o estigma e o preconceito, a questão do aborto, da eutanásia e o assassinato.</p>
+          </div>
+          <div>
+            <h6>Sexo e nudez:</h6>
+            <p>É permitida a partir dessa faixa etária a exibição da nudez dos personagens, bem como cenas de sexo, desde que não explícito, de baixa intensidade e com breviedade.</p>
+          </div>
+          <div>
+            <h6>Drogas:</h6>
+            <p>A questão das drogas ilícitas pode ser melhor explorada nessa faixa, aceitando-se a incidência de descrições do consumo e do tráfico de entorpecentes, além de admitir-se cenas em que o seu uso ocorre de forma insinuada, não explícita. </p>
+          </div>
+
+        <% elsif @movie.classificacao.include? "16" %>
+          <div>
+            <h6>Violência:</h6>
+            <p>Em termos de violência, cenas de grande impacto gráfico são esperadas nessa faixa etária, como estupros, mutilações, atos de tortura ou até mesmo um nível de violência gratuita ou banalizada.</p>
+          </div>
+          <div>
+            <h6>Sexo e nudez:</h6>
+            <p>Já no que concerne ao conteúdo de sexo e nudez, é possível que sejam exibidas cenas que apresentem atos sexuais mais detalhados ou prolongados, além de poderem conter uma nudez mais explícita.</p>
+          </div>
+          <div>
+            <h6>Drogas:</h6>
+            <p>Nessa faixa de recomendação etária, a temática do consumo de drogas ilícitas pode ser mais detalhada, como em cenas em que personagens consomem, produzem ou traficam entorpecentes.</p>
+          </div>
+
+        <% elsif @movie.classificacao.include? "18" %>
+          <div>
+            <h6>Violência:</h6>
+            <p>A partir dessa faixa etária, a exibição de atos violentos de forte impacto gráfico são permitidos, bem como elementos de vil crueldade e de apologia à violência.</p>
+          </div>
+          <div>
+            <h6>Sexo e nudez:</h6>
+            <p>Passa a ser admitida nessa faixa o sexo explícito, bem como cenas em que situações sexuais complexas ou de forte impacto são veiculadas.</p>
+          </div>
+          <div>
+            <h6>Drogas:</h6>
+            <p>Além de cenas em que é mostrado o consumo explícito de drogas ilícitas, conteúdos que tragam imagens, diálogos e contextos em que se estimule ou enalteça o consumo de qualquer desses compostos passam a ser enquadrados nessa faixa etária.</p>
+          </div>
+
+        <% else %>
+          <p>...</p>
+
+        <% end %>
+      </div>
     </div>
   </div>
   <div id="back-button">
