@@ -10,9 +10,13 @@
       <% end %>
     </div>
 
-
-
-    <div class="checkbox">
+    <div id="myBtnContainer">
+      <button class="btn active filter-btn" data-filter='movie-card'> Todos </button>
+      <button class="btn filter-btn" data-filter='filmes'> Filmes </button>
+      <button class="btn filter-btn" data-filter='jogos'> Jogos </button>
+    </div>
+<%# jogo = animals; filme = cars %>
+    <%# <div class="checkbox">
       <label>
         <input type="checkbox" checked data-toggle="toggle" id="Longa" >
         Filmes
@@ -23,12 +27,13 @@
         <input type="checkbox" checked data-toggle="toggle" id="Jogo"> 
         Jogos
       </label>
-    </div> 
+    </div>  %>
     
 
   <% x = @movies.sort_by { |movie| movie.ano_de_producao } %> 
   <% x.reverse.each do |movie| %>
-    <div class="movie-card">
+  <div class="filterDiv"> <%# adicionado %>
+    <div class="movie-card show <%= movie.categoria == "Longa Metragem" ? "filmes" : "jogos" %>">
       <img id="movie-card-poster" src="<%= "#{movie.poster}" %>" alt="<%= movie.titulo_no_brasil %> poster">
       <div id="movie-card-text">
         <h3 id="movie-card-title"><%= movie.titulo_no_brasil %></h3>
@@ -37,6 +42,7 @@
         <%= link_to "Detalhar", movie_path(movie), class: "br-button primary mini" %>
       </div>
     </div>
+  </div> <%# adicionado %>
   <% end %>
   <div id="back-button">
     <%= link_to "Voltar", root_path, class: "br-button primary mini" %>
