@@ -6,8 +6,13 @@
         <h2><%= @movie.titulo_no_brasil %></h2>
         <h4>(<%= @movie.ano_de_producao %>)</h4>
         <p><%= @movie.categoria %></p>
-        <h4>Sinopse:</h4>
-        <p><%= @movie.sinopse %></p>
+        <% if @movie.categoria.include?("Longa Metragem") %>
+          <h4>Sinopse:</h4>
+          <p><%= @movie.sinopse %></p>
+        <% elsif @movie.categoria.include?("Conjunto de Episódio") %>
+          <h4>Sinopse:</h4>
+          <p><%= @movie.sinopse %></p>
+        <% end %>
       </div>
       <div class="card" id="caixa-conteudo">
         <% if @movie.classificacao.include? "Livre" %>

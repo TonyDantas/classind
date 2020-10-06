@@ -26,9 +26,9 @@ Movie.create!(titulo_no_brasil: "O Senhor dos Anéis: O Retorno do Rei", titulo_
 
 Movie.create!(titulo_no_brasil: "Han Solo: Uma história Star Wars", titulo_original: "Solo: A Star Wars Story", categoria: "Longa Metragem", ano_de_producao: 2018, classificacao: "Não recomendado para menores de 12 (doze) anos", descritor_de_conteudo: "Violência")
 Movie.create!(titulo_no_brasil: "Rogue One: Uma história Star Wars", titulo_original: "Rogue One: A Star Wars Story", categoria: "Longa Metragem", ano_de_producao: 2016, classificacao: "Não recomendado para menores de 12 (doze) anos", descritor_de_conteudo: "Violência")
-Movie.create!(titulo_no_brasil: "Star Wars: Episódio IX - A Ascenção Skywalker", titulo_original: "Star Wars: Episode IX - The Rise of Skywalker", categoria: "Longa Metragem", ano_de_producao: 2019, classificacao: "Não recomendado para menores de 12 (doze) anos", descritor_de_conteudo: "Violência")
-Movie.create!(titulo_no_brasil: "Star Wars: Episódio VIII - Os Últimos Jedi", titulo_original: "Star Wars: Episode VIII - The Last Jedi", categoria: "Longa Metragem", ano_de_producao: 2016, classificacao: "Não recomendado para menores de 12 (doze) anos", descritor_de_conteudo: "Violência")
-Movie.create!(titulo_no_brasil: "Star Wars: Episódio VII - O Despertar da Força", titulo_original: "Star Wars: Episode VII - The Force Awakens", categoria: "Longa Metragem", ano_de_producao: 2015, classificacao: "Não recomendado para menores de 12 (doze) anos", descritor_de_conteudo: "Violência")
+Movie.create!(titulo_no_brasil: "Star Wars: A Ascensão Skywalker", titulo_original: "Star Wars: Episode IX - The Rise of Skywalker", categoria: "Longa Metragem", ano_de_producao: 2019, classificacao: "Não recomendado para menores de 12 (doze) anos", descritor_de_conteudo: "Violência")
+Movie.create!(titulo_no_brasil: "Star Wars: Os Últimos Jedi", titulo_original: "Star Wars: Episode VIII - The Last Jedi", categoria: "Longa Metragem", ano_de_producao: 2016, classificacao: "Não recomendado para menores de 12 (doze) anos", descritor_de_conteudo: "Violência")
+Movie.create!(titulo_no_brasil: "Star Wars: O Despertar da Força", titulo_original: "Star Wars: Episode VII - The Force Awakens", categoria: "Longa Metragem", ano_de_producao: 2015, classificacao: "Não recomendado para menores de 12 (doze) anos", descritor_de_conteudo: "Violência")
 Movie.create!(titulo_no_brasil: "Star Wars: Episódio VI - O Retorno de Jedi", titulo_original: "Star Wars: Episode VI - Return of the Jedi", categoria: "Longa Metragem", ano_de_producao: 1983, classificacao: "Não recomendado para menores de 10 (dez) anos", descritor_de_conteudo: "Violência")
 Movie.create!(titulo_no_brasil: "Star Wars: Episódio V - O Império Contra Ataca", titulo_original: "Star Wars: Episode V - The Empire Strikes Back", categoria: "Longa Metragem", ano_de_producao: 1980, classificacao: "Não recomendado para menores de 10 (dez) anos", descritor_de_conteudo: "Violência")
 Movie.create!(titulo_no_brasil: "Star Wars: Episódio IV - Uma Nova Esperança", titulo_original: "Star Wars: Episode IV - A New Hope", categoria: "Longa Metragem", ano_de_producao: 1977, classificacao: "Não recomendado para menores de 10 (dez) anos", descritor_de_conteudo: "Violência")
@@ -41,21 +41,21 @@ Movie.create!(titulo_no_brasil: "Star Wars: Episódio I - A Ameaça Fantasma", t
   #movie.poster = variável
   #movie.save!
 
-
-
 Movie.all.each do |mv|
   url = "http://www.omdbapi.com/?t=#{mv.titulo_original}&apikey=adf1f2d7"
   poster_serialized = open(url).read
   poster = JSON.parse(poster_serialized)
   mv.poster = poster["Poster"]
-  mv.save!
-end
 
-Movie.all.each do |mv|
-  url = "http://www.omdbapi.com/?t=#{mv.titulo_original}&apikey=adf1f2d7"
-  sinopse_serialized = open(url).read
-  sinopse = JSON.parse(sinopse_serialized)
-  mv.sinopse = sinopse["Plot"]
+  filme = mv.titulo_no_brasil
+  name = filme.parameterize.tr(" :-", "-").strip
+  url_sinopse = "https://www.ingresso.com/filme/#{name}?city=brasilia"
+
+  html_file = open(url_sinopse).read
+  html_doc = Nokogiri::HTML(html_file)
+  html_doc.search('.no-result-details .clr-white').each do |element|
+    mv.sinopse = element.text.strip.gsub("<br>", "")
+  end
   mv.save!
 end
 
@@ -70,12 +70,8 @@ Movie.create!(titulo_no_brasil: "Star Wars: Jedi Fallen Order", titulo_original:
 Movie.create!(titulo_no_brasil: "Star Wars: Battlefront 2", titulo_original: "Star Wars: Battlefront 2", ano_de_producao: "2017", categoria: "Jogo: Ação, Aventura e Tiro em Primeira Pessoa", classificacao: "Não recomendado para menores de 12 (doze) anos", descritor_de_conteudo: "Violência", poster: "https://cdn.europosters.eu/image/750/posters/star-wars-battlefront-2-game-cover-i51530.jpg")
 Movie.create!(titulo_no_brasil: "Lego Star Wars: O Despertar da Força", titulo_original: "Lego Star Wars: The Force Awakens", ano_de_producao: "2016", categoria: "Jogo: Ação e Aventura", classificacao: "Livre", descritor_de_conteudo: "Violência", poster: "https://img.ibxk.com.br/2016/02/02/02161748610721.jpg")
 Movie.create!(titulo_no_brasil: "Star Wars: The Force Unleashed 2", titulo_original: "Star Wars: The Force Unleashed 2", ano_de_producao: "2010", categoria: "Jogo: Ação", classificacao: "Não recomendado para menores de 14 (catorze) anos", descritor_de_conteudo: "Mutilação e Assassinato", poster: "https://s2.gaming-cdn.com/images/products/1576/orig/star-wars-the-force-unleashed-ii-cover.jpg")
-Movie.create!(titulo_no_brasil: "Star Wars: The Force Unleashed", titulo_original: "Star Wars: The Force Unleashed", ano_de_producao: "2008", categoria: "Jogo: Aventura", classificacao: "Não recomendado para menores de 14 (catorze) anos", descritor_de_conteudo: "Violência", poster: "https://lh3.googleusercontent.com/proxy/KAFysEwH4BDuKHncjxhKQwtwhEXqCusLSZ30ebqDYn2R5iIN2CfZSl7aKNAh8PNYo0M0oC3SGlwS5CkgYEM_8h0s5TmdLxeoWxQZmXM")
+Movie.create!(titulo_no_brasil: "Star Wars: The Force Unleashed", titulo_original: "Star Wars: The Force Unleashed", ano_de_producao: "2008", categoria: "Jogo: Aventura", classificacao: "Não recomendado para menores de 14 (catorze) anos", descritor_de_conteudo: "Violência", poster: "https://images-na.ssl-images-amazon.com/images/I/9156O9qwhAL.jpg")
 
 Movie.create!(titulo_no_brasil: "Enter the Matrix", titulo_original: "Enter the Matrix", ano_de_producao: "2003", categoria: "Jogo: Ação", classificacao: "Não recomendado para menores de 16 (dezesseis) anos", descritor_de_conteudo: "Violência", poster: "https://iv1.lisimg.com/image/289417/640full-enter-the-matrix-cover.jpg")
 
 Movie.create!(titulo_no_brasil: "Lego: O Senhor dos Anéis", titulo_original: "Lego: The Lord of the Rings", ano_de_producao: "2012", categoria: "Jogo: Ação", classificacao: "Livre", descritor_de_conteudo: "Violência", poster: "https://jovemnerd.com.br/wp-content/uploads/Lego1807.jpg")
-
-
-
-
