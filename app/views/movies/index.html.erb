@@ -11,6 +11,20 @@
     </div>
 
 
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" checked data-toggle="toggle" id="Longa" >
+        Filmes
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" checked data-toggle="toggle" id="Jogo"> 
+        Jogos
+      </label>
+    </div> 
+    
+
   <% x = @movies.sort_by { |movie| movie.ano_de_producao } %> 
   <% x.reverse.each do |movie| %>
     <div class="movie-card">
