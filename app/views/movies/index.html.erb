@@ -1,36 +1,19 @@
 <div class="container" id="movies_index">
-    <div class="br-form">
-      <%= form_tag movies_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "br-input",
-              placeholder: "Encontre uma obra"
-            %>
-            <%= submit_tag "Buscar", class: "br-button primary mini" %>
-      <% end %>
-    </div>
+  <div class="br-input" id="movies-search">
+    <form class="movie-search-form" action="/movies" accept-charset="UTF-8" method="get">
+      <input type="text" name="query" id="query" value="" class="br-input" placeholder="Encontre uma obra" kl_vkbd_parsed="true">
+      <input type="submit" name="commit" value="Buscar" class="br-button primary mini" data-disable-with="Buscar" kl_vkbd_parsed="true">
+    </form>
+  </div>
 
-    <div id="myBtnContainer">
-      <button class="btn active filter-btn" data-filter='movie-card'> Todos </button>
-      <button class="btn filter-btn" data-filter='filmes'> Filmes </button>
-      <button class="btn filter-btn" data-filter='jogos'> Jogos </button>
-    </div>
-<%# jogo = animals; filme = cars %>
-    <%# <div class="checkbox">
-      <label>
-        <input type="checkbox" checked data-toggle="toggle" id="Longa" >
-        Filmes
-      </label>
-    </div>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" checked data-toggle="toggle" id="Jogo"> 
-        Jogos
-      </label>
-    </div>  %>
-    
 
-  <% x = @movies.sort_by { |movie| movie.ano_de_producao } %> 
+  <div id="myBtnContainer">
+    <button class="btn active filter-btn" data-filter='movie-card'> Todos </button>
+    <button class="btn filter-btn" data-filter='filmes'> Filmes </button>
+    <button class="btn filter-btn" data-filter='jogos'> Jogos </button>
+  </div>
+
+  <% x = @movies.sort_by { |movie| movie.ano_de_producao } %>
   <% x.reverse.each do |movie| %>
   <div class="filterDiv"> <%# adicionado %>
     <div class="movie-card show <%= movie.categoria == "Longa Metragem" ? "filmes" : "jogos" %>">
