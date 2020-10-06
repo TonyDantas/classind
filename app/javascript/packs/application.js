@@ -7,7 +7,10 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("../../../vendor/assets/dist/js/dsgov")
+
+// require("../../../vendor/assets/dist/js/dsgov.js")
+
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -15,15 +18,18 @@ require("../../../vendor/assets/dist/js/dsgov")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
 import 'bootstrap';
 import { loadDynamicBannerText } from './banner';
-// import { BRCard } from './card';
-  // Call your JS functions here
+// import { filterSelection } from './filter'
+import { initFilter } from './filter';
+
 
 document.addEventListener('turbolinks:load', () => {
-
+  // Call your JS functions here
+  // [...]
   loadDynamicBannerText();
-  // BRCard.new._setExpandBehavior();
-
+  initFilter();
 });
+
+  // filterSelection();
+
