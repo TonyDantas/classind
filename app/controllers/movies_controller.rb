@@ -3,8 +3,8 @@ class MoviesController < ApplicationController
   def index
     # case params[:commit]
     # when "Audiovisual", "Buscar"
-      if params[:query] && Movie.search_by_titulo_no_brasil(params[:query]).present?
-        @movies = Movie.search_by_titulo_no_brasil(params[:query])
+      if params[:query] && Movie.search_by_titulo_e_categoria_no_brasil(params[:query]).present?
+        @movies = Movie.search_by_titulo_e_categoria_no_brasil(params[:query])
       else
         # @movies = []
         flash[:notice] = "Título não localizado"
