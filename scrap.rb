@@ -1,28 +1,16 @@
-require 'open-uri'
-require 'nokogiri'
+# require 'open-uri'
+# require 'nokogiri'
 
 
-# rogue = 'https://www.ingresso.com/filme/django-livre?city=brasilia'
+# filme = "Django Livre"
 
-# def findSuperSmashBrosPrice(url)
-#   html_file = open(url).read
-#   html_doc = Nokogiri::HTML(html_file)
+# name = filme.parameterize.tr(" :-", "-").strip
+# url = "https://www.ingresso.com/filme/#{name}?city=brasilia"
 
-#   html_doc.search('.no-result-details .clr-white').each do |element|
-#     puts "#{element.text.strip}"
-#   end
+# html_file = open(url).read
+# html_doc = Nokogiri::HTML(html_file)
+
+# html_doc.search('.no-result-details .clr-white').each do |element|
+#   puts element.text.strip
 # end
 
-
-# findSuperSmashBrosPrice(rogue)
-filme = "Django Livre"
-
-name = filme.tr(" :-", "-").strip
-url = "https://www.ingresso.com/filme/#{name.parameterize}?city=brasilia"
-
-html_file = open(url).read
-html_doc = Nokogiri::HTML(html_file)
-
-html_doc.search('.no-result-details .clr-white').each do |element|
-  puts element.text.strip
-end
