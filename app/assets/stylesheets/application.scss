@@ -193,9 +193,25 @@
   align-items: center;
 }
 
-// #buttons_place button {
-//   margin: 6px;
-// }
+.movie-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: center;
+  width: 100%;
+}
+
+.movie-search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.br-button.mini {
+  border-radius: 20px;
+}
 
 body {
   margin: 0px;
