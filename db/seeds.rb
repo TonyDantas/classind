@@ -70,12 +70,9 @@ Movie.create!(titulo_no_brasil: "Star Wars: Jedi Fallen Order", titulo_original:
 Movie.create!(titulo_no_brasil: "Star Wars: Battlefront 2", titulo_original: "Star Wars: Battlefront 2", ano_de_producao: "2017", categoria: "Jogo: Ação, Aventura e Tiro em Primeira Pessoa", classificacao: "Não recomendado para menores de 12 (doze) anos", descritor_de_conteudo: "Violência", poster: "https://cdn.europosters.eu/image/750/posters/star-wars-battlefront-2-game-cover-i51530.jpg")
 Movie.create!(titulo_no_brasil: "Lego Star Wars: O Despertar da Força", titulo_original: "Lego Star Wars: The Force Awakens", ano_de_producao: "2016", categoria: "Jogo: Ação e Aventura", classificacao: "Livre", descritor_de_conteudo: "Violência", poster: "https://img.ibxk.com.br/2016/02/02/02161748610721.jpg")
 Movie.create!(titulo_no_brasil: "Star Wars: The Force Unleashed 2", titulo_original: "Star Wars: The Force Unleashed 2", ano_de_producao: "2010", categoria: "Jogo: Ação", classificacao: "Não recomendado para menores de 14 (catorze) anos", descritor_de_conteudo: "Mutilação e Assassinato", poster: "https://s2.gaming-cdn.com/images/products/1576/orig/star-wars-the-force-unleashed-ii-cover.jpg")
-Movie.create!(titulo_no_brasil: "Star Wars: The Force Unleashed", titulo_original: "Star Wars: The Force Unleashed", ano_de_producao: "2008", categoria: "Jogo: Aventura", classificacao: "Não recomendado para menores de 14 (catorze) anos", descritor_de_conteudo: "Violência", poster: "https://lh3.googleusercontent.com/proxy/KAFysEwH4BDuKHncjxhKQwtwhEXqCusLSZ30ebqDYn2R5iIN2CfZSl7aKNAh8PNYo0M0oC3SGlwS5CkgYEM_8h0s5TmdLxeoWxQZmXM")
+Movie.create!(titulo_no_brasil: "Star Wars: The Force Unleashed", titulo_original: "Star Wars: The Force Unleashed", ano_de_producao: "2008", categoria: "Jogo: Aventura", classificacao: "Não recomendado para menores de 14 (catorze) anos", descritor_de_conteudo: "Violência", poster: "https://images-na.ssl-images-amazon.com/images/I/9156O9qwhAL.jpg")
 
 Movie.create!(titulo_no_brasil: "Enter the Matrix", titulo_original: "Enter the Matrix", ano_de_producao: "2003", categoria: "Jogo: Ação", classificacao: "Não recomendado para menores de 16 (dezesseis) anos", descritor_de_conteudo: "Violência", poster: "https://iv1.lisimg.com/image/289417/640full-enter-the-matrix-cover.jpg")
 
 Movie.create!(titulo_no_brasil: "Lego: O Senhor dos Anéis", titulo_original: "Lego: The Lord of the Rings", ano_de_producao: "2012", categoria: "Jogo: Ação", classificacao: "Livre", descritor_de_conteudo: "Violência", poster: "https://jovemnerd.com.br/wp-content/uploads/Lego1807.jpg")
-
-
-
 
