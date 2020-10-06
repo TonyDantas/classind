@@ -2,7 +2,7 @@
   <div class="br-input" id="box">
     <h2>Classificação Indicativa</h2>
     <p>
-      Descubra a recomendação etária de filmes, séries, programas de TV ou jogos.
+      Descubra a recomendação etária de filmes, séries, programas de TV ou jogos. <%# <span id="banner-typed-text"></span> %>
     </p>
     <% if flash[:notice] %>
       <div class="notice"><%= flash[:notice] %></div>
@@ -17,7 +17,7 @@
           %>
           <dir></dir>
           <div class="container-fluid" id="buttons_place">
-            <%= submit_tag "      Pesquisar", class: "br-button primary mini" %>
+            <%= submit_tag "Pesquisar", class: "br-button primary mini" %>
           </div>
       </div>
     <% end %>
