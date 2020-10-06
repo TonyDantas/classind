@@ -31,6 +31,12 @@
   display: flex; // adicionado
 }
 
+.filter-btn {
+  font-size: 11px;
+  padding: 2px 15px;
+  margin-left: 10px;
+}
+
 .filter-btn:hover { // adicionado
   background-color: #ddd; // adicionado
 }
