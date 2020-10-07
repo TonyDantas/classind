@@ -16,252 +16,254 @@
 @import "css/dsgov.min";
 
 
-@media(max-width: 1600px) {
-  .movie-card {
-    display: none; // alterado; era display: flex; 
-    width: 100%;
-    height: 250px;
-    margin: 10px;
-    box-shadow: 0px 5px 8px -3px;
-  }
+body {
 
-  .filterDiv { // adicionado
-    overflow: hidden; // adicionado
-  }
+}
 
-  .show { // adicionado
-    display: flex; // adicionado
-  }
+.movie-card {
+  display: none; // alterado; era display: flex;
+  width: 100%;
+  height: 250px;
+  margin: 10px;
+  box-shadow: 0px 5px 8px -3px;
+}
 
-  .filter-btn {
-    font-size: 11px;
-    padding: 2px 15px;
-    margin-left: 10px;
-  }
+.filterDiv { // adicionado
+  overflow: hidden; // adicionado
+}
 
-  .filter-btn:hover { // adicionado
-    background-color: #ddd; // adicionado
-  }
+.show { // adicionado
+  display: flex; // adicionado
+}
 
-  /* Add a dark background to the active button */
-  .btn.active { // adicionado
-    background-color:#1351b4; // adicionado
-    color: white;
-  }
+.filter-btn {
+  font-size: 11px;
+  padding: 2px 15px;
+  margin-left: 10px;
+}
+
+.filter-btn:hover { // adicionado
+  background-color: #ddd; // adicionado
+}
+
+/* Add a dark background to the active button */
+.btn.active { // adicionado
+  background-color:#1351b4; // adicionado
+  color: white;
+}
 
 
-  #movie-card-poster {
-    height: 245px;
-    width: 200px;
-  }
+#movie-card-poster {
+  height: 245px;
+  width: 200px;
+}
 
-  #movie-card-text {
-    margin-left: 20px;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+#movie-card-text {
+  margin-left: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
-  #movie-card-text h3 {
-    margin-top: 40px;
-    margin-bottom: 0;
-  }
+#movie-card-text h3 {
+  margin-top: 40px;
+  margin-bottom: 0;
+}
 
-  #movie-card-text h5 {
-    margin-top: 5px;
-    margin-bottom: 0;
-  }
+#movie-card-text h5 {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
 
-  #movie-card-text p {
-    margin-top: 5px;
-    margin-bottom: 30px;
-  }
+#movie-card-text p {
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
 
-  #caixa-conteudo {
-    background: black;
-    color: white;
-    text-align: center;
-    border-radius: 5px;
-    padding: 0;
-    margin: 0;
-    height: 110px;
-    width: 230px;
-  }
+#caixa-conteudo {
+  background: black;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0;
+  height: 110px;
+  width: 230px;
+}
 
-  #caixa-conteudo h6 {
-    margin: 5px;
-    font-size: x-small;
-  }
+#caixa-conteudo h6 {
+  margin: 5px;
+  font-size: x-small;
+}
 
-  #caixa-descritor {
-    background: white;
-    color: black;
-    border-radius: 5px;
-    height: 64px;
-    margin-top: 5px;
-    display: flex;
-  }
+#caixa-descritor {
+  background: white;
+  color: black;
+  border-radius: 5px;
+  height: 64px;
+  margin-top: 5px;
+  display: flex;
+}
 
-  #caixa-descritor img {
-    height: 60px;
-    width: 60px;
-    margin: 2px;
-  }
+#caixa-descritor img {
+  height: 60px;
+  width: 60px;
+  margin: 2px;
+}
 
-  #descritor-text {
-    margin-left: 3px;
-    text-align: center;
-    width: 100%;
-  }
+#descritor-text {
+  margin-left: 3px;
+  text-align: center;
+  width: 100%;
+}
 
-  #descritor-text p {
-    margin-left: 3px;
-    text-align: center;
-  }
+#descritor-text p {
+  margin-left: 3px;
+  text-align: center;
+}
 
-  .movie-card-show {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    margin: 10px;
-    box-shadow: 0px 5px 8px -3px;
-    text-align: justify;
-  }
+.movie-card-show {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 10px;
+  box-shadow: 0px 5px 8px -3px;
+  text-align: justify;
+}
 
-  #movie-card-details {
-    display: flex;
-  }
+#movie-card-details {
+  display: flex;
+}
 
-  #movie-card-show-poster {
-    height: 400px;
-    width: 300px;
-  }
+#movie-card-show-poster {
+  height: 400px;
+  width: 300px;
+}
 
-  #movie-card-show-text {
-    margin-left: 10px;
-    margin-right: 20px;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+#movie-card-show-text {
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
-  #movie-card-show-text h2 {
-    margin-top: 15px;
-    margin-bottom: 0;
-  }
+#movie-card-show-text h2 {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
 
-  #movie-card-show-text h4 {
-    margin-top: 15px;
-    margin-bottom: 0;
-  }
+#movie-card-show-text h4 {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
 
-  #movie-card-show-text h5 {
-    margin-top: 15px;
-    margin-bottom: 0;
-  }
+#movie-card-show-text h5 {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
 
-  #movie-card-show-text h6 {
-    margin-top: 5px;
-    margin-bottom: 0;
-  }
+#movie-card-show-text h6 {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
 
-  #movie-card-show-text p {
-    margin-top: 5px;
-    margin-bottom: 10px;
-  }
+#movie-card-show-text p {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
 
-  #card-show-text-classificacao .classif-title {
-    margin-top: 5px;
-    margin-bottom: 10px;
-  }
+#card-show-text-classificacao .classif-title {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
 
-  #movies_index {
-    margin-top: 120px;
-    margin-bottom: 150px;
-  }
+#movies_index {
+  margin-top: 120px;
+  margin-bottom: 150px;
+}
 
-  .br-footer {
-    position: absolute;
-    // bottom: 0;
-    left: 0;
-    width: 100%;
-  }
+.br-footer {
+  position: absolute;
+  // bottom: 0;
+  left: 0;
+  width: 100%;
+}
 
-  .br-input {
-    position: relative;
-    margin: 10px;
-    width: 75%;
-  }
+.br-input {
+  position: relative;
+  margin: 10px;
+  width: 75%;
+}
 
-  #home_geral {
-    width: 100vw;
-    height: 100vh;
-    background: #6C7A89;
-    background-image: asset-url("foto-banner.jpg");
-    background-size: cover;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
+#home_geral {
+  width: 100vw;
+  height: 100vh;
+  background: #6C7A89;
+  background-image: asset-url("foto-banner.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
-  #box {
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-shadow: 2px 2px black;
-  }
+#box {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px black;
+}
 
-  #buttons_place {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
+#buttons_place {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
-  .movie-search {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    position: center;
-    width: 100%;
-  }
+.movie-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: center;
+  width: 100%;
+}
 
-  .movie-search-form {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
+.movie-search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
-  .br-button.mini {
-    border-radius: 20px;
-  }
+.br-button.mini {
+  border-radius: 20px;
+}
 
-  body {
-    margin: 0px;
-  }
+body {
+  margin: 0px;
+}
 
-  .br-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2;
-  }
+.br-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
 
-  .buttons_place {
-    position: relative;
-  }
+.buttons_place {
+  position: relative;
+}
 
-  .notice {
-    margin-bottom: 17px;
-    color: white;
-  }
+.notice {
+  margin-bottom: 17px;
+  color: white;
+}
 
-  #back-button {
-    text-align: center;
-  }
+#back-button {
+  text-align: center;
 }
