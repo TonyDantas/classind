@@ -1,6 +1,5 @@
 require 'json'
 require 'open-uri'
-require 'CGI'
 
 Movie.destroy_all
 Game.destroy_all
