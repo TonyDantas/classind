@@ -17,7 +17,11 @@
 
 
 body {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.br-button {
+  font-size: 1rem !important;
 }
 
 .movie-card {
@@ -37,7 +41,7 @@ body {
 }
 
 .filter-btn {
-  font-size: 11px;
+  font-size: 1rem;
   padding: 2px 15px;
   margin-left: 10px;
 }
@@ -52,6 +56,11 @@ body {
   color: white;
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 #movie-card-poster {
   height: 245px;
@@ -87,7 +96,7 @@ body {
   padding: 0;
   margin: 0;
   height: 110px;
-  width: 230px;
+  width: 300px;
 }
 
 #caixa-conteudo h6 {
@@ -146,7 +155,12 @@ body {
   margin-bottom: 0;
 }
 
-#movie-card-show-text h2 {
+#movie-card-show-text h1 {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+#movie-card-show-text h3 {
   margin-top: 15px;
   margin-bottom: 0;
 }
@@ -157,11 +171,6 @@ body {
 }
 
 #movie-card-show-text h5 {
-  margin-top: 15px;
-  margin-bottom: 0;
-}
-
-#movie-card-show-text h6 {
   margin-top: 5px;
   margin-bottom: 0;
 }
@@ -204,10 +213,6 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-
-#home_geral h2 {
-
 }
 
 #box {
@@ -259,19 +264,23 @@ body {
   z-index: 2;
 }
 
-.br-header .links {
-  font-size: 1.4rem;
+.links a {
+  font-size: 1rem !important;
 }
 
-.br-header .title {
-  font-size: 2.4rem;
+.title {
+  font-size: 1.8rem !important;
+}
+
+.subtitle {
+  font-size: 1rem !important;
 }
 
 .br-header .menu {
   margin-top: 10px !important;
 }
 
-.br-header .portal-logo {
+.portal-logo {
   background-size: 111px 40px;
   height: 40px;
   min-width: 111px;
