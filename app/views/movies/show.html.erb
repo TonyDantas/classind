@@ -10,7 +10,7 @@
       <div class="card" id="caixa-conteudo">
         <% if @movie.classificacao.include? "Livre" %>
           <h6><%= "CLASSIFICAÇÃO INDICATIVA: Livre" %></h6>
-          <div id="caixa-descritor">
+          <div class="flex-center" id="caixa-descritor">
             <%= image_tag "L.jpg" %>
             <div id="descritor-text">
               <p><%= @movie.descritor_de_conteudo %></p>
@@ -18,7 +18,7 @@
           </div>
         <% elsif @movie.classificacao.include? "10" %>
           <h6><%= "CLASSIFICAÇÃO INDICATIVA: 10 ANOS" %></h6>
-          <div id="caixa-descritor">
+          <div class="flex-center" id="caixa-descritor">
             <%= image_tag "10.jpg" %>
             <div id="descritor-text">
               <p><%= @movie.descritor_de_conteudo %></p>
@@ -26,7 +26,7 @@
           </div>
         <% elsif @movie.classificacao.include? "12" %>
           <h6><%= "CLASSIFICAÇÃO INDICATIVA: 12 ANOS" %></h6>
-          <div id="caixa-descritor">
+          <div class="flex-center" id="caixa-descritor">
             <%= image_tag "12.jpg" %>
             <div id="descritor-text">
               <p><%= @movie.descritor_de_conteudo %></p>
@@ -34,14 +34,13 @@
           </div>
         <% elsif @movie.classificacao.include? "14" %>
           <h6><%= "CLASSIFICAÇÃO INDICATIVA: 14 ANOS" %></h6>
-          <div id="caixa-descritor">
+          <div class="flex-center" id="caixa-descritor">
             <%= image_tag "14.jpg" %>
             <div id="descritor-text">
               <p><%= @movie.descritor_de_conteudo %></p>
             </div>
           </div>
         <% elsif @movie.classificacao.include? "16" %>
-
           <h6><%= "CLASSIFICAÇÃO INDICATIVA: 16 ANOS" %></h6>
           <div id="caixa-descritor">
             <%= image_tag "16.jpg" %>
@@ -51,7 +50,7 @@
           </div>
         <% elsif @movie.classificacao.include? "18" %>
           <h6><%= "CLASSIFICAÇÃO INDICATIVA: 18 ANOS" %></h6>
-          <div id="caixa-descritor">
+          <div class="flex-center" id="caixa-descritor">
             <%= image_tag "18.jpg" %>
             <div id="descritor-text">
               <p><%= @movie.descritor_de_conteudo %></p>
