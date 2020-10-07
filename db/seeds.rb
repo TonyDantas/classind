@@ -59,6 +59,13 @@ Movie.all.each do |mv|
   html_doc.search('.no-result-details .clr-white').each do |element|
     mv.sinopse = element.text.strip.gsub("<br>", "")
   end
+
+  if mv.sinopse == nil
+    url = URI.parse(URI.escape("http://www.omdbapi.com/?t=#{mv.titulo_original}&apikey=adf1f2d7"))
+    sinopse_serialized = open(url).read
+    sinopse = JSON.parse(sinopse_serialized)
+    mv.sinopse = sinopse["Plot"]
+  end
   mv.save!
 end
 
