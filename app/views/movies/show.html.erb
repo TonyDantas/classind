@@ -6,8 +6,6 @@
         <h2><%= @movie.titulo_no_brasil %></h2>
         <h4>(<%= @movie.ano_de_producao %>)</h4>
         <p><%= @movie.categoria %></p>
-        <h4>Sinopse:</h4>
-        <p><%= @movie.sinopse %></p>
       </div>
       <div class="card" id="caixa-conteudo">
         <% if @movie.classificacao.include? "Livre" %>
@@ -152,9 +150,23 @@
 
         <% end %>
       </div>
+
+      <% if @movie.categoria.include?("Longa Metragem") %>
+        <details class="br-card movie-card-show-text" id="sinopse_shadow">
+        <summary>Sinopse<i class="fas fa-angle-down"></i></summary>
+        <p><%= @movie.sinopse %></p>
+      </details>
+      <% elsif @movie.categoria.include?("Conjunto de Episódio") %>
+        <details class="br-card movie-card-show-text" id="sinopse_shadow">
+        <summary>Sinopse<i class="fas fa-angle-down"></i></summary>
+        <p><%= @movie.sinopse %></p>
+      </details>
+      <% end %>
+
     </div>
   </div>
   <div id="back-button">
     <%= link_to "Voltar", :back, class: "br-button primary mini" %>
   </div>
 </div>
+

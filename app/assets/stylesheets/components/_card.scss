@@ -1,0 +1,40 @@
+.br-card[expanded] .expanded {
+  overflow: hidden;
+}
+
+.br-card[expanded='on'] .expanded {
+  height: 100%;
+  opacity: 0;
+}
+
+.br-card[expanded='off'] .expanded {
+  opacity: 0;
+  height: 100%;
+  z-index: -1;
+}
+
+#movie-card-show-text .movie-card-show-text p {
+  width: 99%;
+  padding: 0 10px;
+}
+
+#movie-card-show-text .movie-card-show-text summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  font-weight: 700;
+  font-size: 17px;
+  svg {
+    position: absolute;
+    color: #1351b4;
+    top: 9px;
+    left: 62px;
+  }
+  &::-webkit-details-marker { display: none }
+}
+
+#sinopse_shadow {
+  box-shadow: none;
+}
+
