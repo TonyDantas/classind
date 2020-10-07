@@ -1,5 +1,6 @@
 require 'json'
 require 'open-uri'
+require 'CGI'
 
 Movie.destroy_all
 Game.destroy_all
@@ -36,13 +37,15 @@ Movie.create!(titulo_no_brasil: "Star Wars: Episódio III - A Vingança dos Sith
 Movie.create!(titulo_no_brasil: "Star Wars: Episódio II - Ataque dos Clones", titulo_original: "Star Wars: Episode II - Attack of the Clones", categoria: "Longa Metragem", ano_de_producao: 2002, classificacao: "Livre", descritor_de_conteudo: "")
 Movie.create!(titulo_no_brasil: "Star Wars: Episódio I - A Ameaça Fantasma", titulo_original: "Star Wars: Episode I - The Phantom Menace", categoria: "Longa Metragem", ano_de_producao: 1999, classificacao: "Livre", descritor_de_conteudo: "")
 
+Movie.create!(titulo_no_brasil: "O Fabuloso Destino de Amélie Poulain", titulo_original: "Amélie", categoria: "Longa Metragem", ano_de_producao: 2000, classificacao: "Não recomendado para menores de 14 (catorze) anos", descritor_de_conteudo: "Temática Adulta e Insinuações de Sexo")
+
 #Movie.all.each do |movie|
   #go to API and fetch poster e guardar na variável
   #movie.poster = variável
   #movie.save!
 
 Movie.all.each do |mv|
-  url = "http://www.omdbapi.com/?t=#{mv.titulo_original}&apikey=adf1f2d7"
+  url = URI.parse(URI.escape("http://www.omdbapi.com/?t=#{mv.titulo_original}&apikey=adf1f2d7"))
   poster_serialized = open(url).read
   poster = JSON.parse(poster_serialized)
   mv.poster = poster["Poster"]
