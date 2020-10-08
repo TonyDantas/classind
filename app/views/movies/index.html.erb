@@ -13,22 +13,39 @@
     <button class="btn filter-btn" data-filter='jogos'> Jogos </button>
   </div>
 
-  <div class="row">
+  <div class="cards-grid">
     <% x = @movies.sort_by { |movie| movie.ano_de_producao } %>
     <% x.reverse.each do |movie| %>
-      <div class="col-6">
-      <div class="filterDiv"> <%# adicionado %>
-        <div class="movie-card show <%= movie.categoria == "Longa Metragem" ? "filmes" : "jogos" %>">
-          <img id="movie-card-poster" src="<%= "#{movie.poster}" %>" alt="<%= movie.titulo_no_brasil %> poster">
-          <div id="movie-card-text">
-            <h3 id="movie-card-title"><%= movie.titulo_no_brasil %></h3>
-            <h5>(<%= movie.ano_de_producao %>)</h5>
-            <p><%= movie.categoria %></p>
-            <%= link_to "Ver classificação", movie_path(movie), class: "br-button primary mini" %>
+    <div class="filterDiv"> <%# adicionado %>
+      <div class="movie-card show <%= movie.categoria == "Longa Metragem" ? "filmes" : "jogos" %>">
+        <img id="movie-card-poster" src="<%= "#{movie.poster}" %>" alt="<%= movie.titulo_no_brasil %> poster">
+        <div id="movie-card-text">
+          <h3 id="movie-card-title"><%= movie.titulo_no_brasil %></h3>
+          <h5>(<%= movie.ano_de_producao %>)</h5>
+          <p><%= movie.categoria %></p>
+          <div class="d-flex justify-content-between aling-items-center" id="tag-descritor">
+            <div id="button-detalhar">
+              <%= link_to "Detalhar", movie_path(movie), class: "br-button primary mini" %>
+            </div>
+            <div class="container">
+              <% if movie.classificacao.include? "Livre" %>
+                <%= image_tag "L.jpg" %>
+              <% elsif movie.classificacao.include? "10" %>
+                <%= image_tag "10.jpg" %>
+              <% elsif movie.classificacao.include? "12" %>
+                <%= image_tag "12.jpg" %>
+              <% elsif movie.classificacao.include? "14" %>
+                <%= image_tag "14.jpg" %>
+              <% elsif movie.classificacao.include? "16" %>
+                <%= image_tag "16.jpg" %>
+              <% elsif movie.classificacao.include? "18" %>
+                <%= image_tag "18.jpg" %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
-      </div> <%# adicionado %>
+    </div> <%# adicionado %>
     <% end %>
   </div>
   <div id="back-button">
