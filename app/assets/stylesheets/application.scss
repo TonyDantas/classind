@@ -89,6 +89,9 @@ body {
   margin-left: 20px;
   margin-top: 0;
   margin-bottom: 0;
+  // display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 #movie-card-text h3 {
@@ -342,15 +345,24 @@ body {
 #tag-descritor img {
   height: 60px;
   width: 60px;
-  margin-left: 49px;
+  margin-left: 57px;
+  margin-right: 30px;
+  padding-bottom: 10px;
 }
 
 #tag-descritor {
   padding-top: 1px;
-  padding-right: 24px;
+  padding-right: 42px;
   margin-top: 3px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 #button-detalhar {
   padding-top: 16px;
+}
+
+#movie-card-title {
+  font-family: 'Frank Ruhl Libre', serif;
 }
