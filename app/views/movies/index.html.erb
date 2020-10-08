@@ -13,20 +13,24 @@
     <button class="btn filter-btn" data-filter='jogos'> Jogos </button>
   </div>
 
-  <% x = @movies.sort_by { |movie| movie.ano_de_producao } %>
-  <% x.reverse.each do |movie| %>
-  <div class="filterDiv"> <%# adicionado %>
-    <div class="movie-card show <%= movie.categoria == "Longa Metragem" ? "filmes" : "jogos" %>">
-      <img id="movie-card-poster" src="<%= "#{movie.poster}" %>" alt="<%= movie.titulo_no_brasil %> poster">
-      <div id="movie-card-text">
-        <h3 id="movie-card-title"><%= movie.titulo_no_brasil %></h3>
-        <h5>(<%= movie.ano_de_producao %>)</h5>
-        <p><%= movie.categoria %></p>
-        <%= link_to "Detalhar", movie_path(movie), class: "br-button primary mini" %>
+  <div class="row">
+    <% x = @movies.sort_by { |movie| movie.ano_de_producao } %>
+    <% x.reverse.each do |movie| %>
+      <div class="col-6">
+      <div class="filterDiv"> <%# adicionado %>
+        <div class="movie-card show <%= movie.categoria == "Longa Metragem" ? "filmes" : "jogos" %>">
+          <img id="movie-card-poster" src="<%= "#{movie.poster}" %>" alt="<%= movie.titulo_no_brasil %> poster">
+          <div id="movie-card-text">
+            <h3 id="movie-card-title"><%= movie.titulo_no_brasil %></h3>
+            <h5>(<%= movie.ano_de_producao %>)</h5>
+            <p><%= movie.categoria %></p>
+            <%= link_to "Ver classificação", movie_path(movie), class: "br-button primary mini" %>
+          </div>
+        </div>
       </div>
-    </div>
-  </div> <%# adicionado %>
-  <% end %>
+      </div> <%# adicionado %>
+    <% end %>
+  </div>
   <div id="back-button">
     <%= link_to "Voltar", root_path, class: "br-button primary mini" %>
   </div>

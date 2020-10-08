@@ -3,9 +3,8 @@
     <img id="movie-card-show-poster" src="<%= "#{@movie.poster}" %>" alt="<%= @movie.titulo_no_brasil %> poster">
     <div id="movie-card-show-text">
       <div id="movie-card-show-text-title">
-        <h1><%= @movie.titulo_no_brasil %></h1>
-        <h3>(<%= @movie.ano_de_producao %>)</h3>
-        <p><%= @movie.categoria %></p>
+        <h1><%= @movie.titulo_no_brasil %> (<%= @movie.ano_de_producao %>)</h1>
+        <h3><%= @movie.categoria %></h3>
       </div>
       <div class="card" id="caixa-conteudo">
         <% if @movie.classificacao.include? "Livre" %>
@@ -58,8 +57,8 @@
           </div>
         <% end %>
       </div>
-      <div class="card-show-text-classificacao mt-5">
-        <h4 id="classif-title">Classificação Indicativa:</h4>
+      <div class="card-show-text-classificacao">
+        <h2 id="classif-title">Classificação Indicativa:</h2>
         <p>Quais tipos de conteúdo esperar na faixa etária de <strong><%= @movie.classificacao %></strong>?</p>
         <% if @movie.classificacao.include? "Livre" %>
           <div class="space-classind mt-5">

@@ -15,9 +15,25 @@
 
 @import "css/dsgov.min";
 
+html {
+    position: relative;
+    min-height: 100%;
+}
 
 body {
   font-size: 1.2rem;
+  margin: 0px;
+  margin: 0 0 100px;
+  /* bottom = footer height */
+  padding: 25px;
+}
+
+summary {
+  margin-bottom: 20px;
+}
+
+summary p {
+  margin: 20px;
 }
 
 .br-button {
@@ -99,7 +115,7 @@ body {
   text-align: center;
   border-radius: 5px;
   padding: 0;
-  margin: 0;
+  margin: 20px;
   height: 110px;
   width: 300px;
 }
@@ -128,11 +144,13 @@ body {
   margin-left: 3px;
   text-align: center;
   width: 100%;
+  padding-top: 32px;
 }
 
 #descritor-text p {
   margin-left: 3px;
   text-align: center;
+  font-size: smaller;
 }
 
 .movie-card-show {
@@ -177,6 +195,7 @@ body {
 #movie-card-show-text h3 {
   margin-top: 15px;
   margin-bottom: 0;
+  color: gray;
 }
 
 #movie-card-show-text h4 {
@@ -191,7 +210,11 @@ body {
 
 #movie-card-show-text p {
   margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
+}
+
+.card-show-text-classificacao {
+  margin-right: 20px;
 }
 
 #card-show-text-classificacao .classif-title {
@@ -206,9 +229,11 @@ body {
 
 .br-footer {
   position: absolute;
-  // bottom: 0;
   left: 0;
+  bottom: 0;
+  height: 150px;
   width: 100%;
+  overflow: hidden;
 }
 
 .br-input {
@@ -264,10 +289,6 @@ body {
 
 .br-button.mini {
   border-radius: 20px;
-}
-
-body {
-  margin: 0px;
 }
 
 .br-header {
