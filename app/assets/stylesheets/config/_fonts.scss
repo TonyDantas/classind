@@ -2,8 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&amp;display=swap');
 @import url('https://cdn.dsgovserprodesign.estaleiro.serpro.gov.br/design-system/fonts/rawline/css/rawline.css');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@900&family=Raleway:wght@700;800&display=swap');
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
@@ -17,3 +16,19 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+.nova_fonte {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-weight: 900;
+  text-align: center;
+  padding-top: 47px;
+  background-color: #131212;
+  padding-bottom: 28px;
+  color: white;
+  text-shadow: 0px 0px 5px grey;
+  margin-bottom: 0px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  letter-spacing: 1px;
+  box-shadow: 0px 0px 2px black;
+}
